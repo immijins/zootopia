@@ -2,6 +2,9 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
+import './FlyingText.css'
+import Cloud from '../../assets/cloud.png'
+
 interface FlyingTextProps {
     lines?: string[];
 }
@@ -56,21 +59,10 @@ export default function FlyingText({
 
     return (
         <div
+            className='FlyingDiv'
             ref={containerRef}
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'flex-start',
-                transform: 'rotate(-8deg)',
-                fontFamily: "'Fredoka', 'Impact', sans-serif",
-                fontWeight: 900,
-                fontSize: '60px',
-                color: '#03B5A5',
-                lineHeight: 1.15,
-                userSelect: 'none',
-                position: 'absolute'
-            }}
         >
+            {/* 텍스트 */}
             {lines.map((line, lineIdx) => (
                 <div key={lineIdx} style={{ whiteSpace: 'pre', zIndex: 99 }}>
                     {line.split('').map((char, charIdx) => (
@@ -78,7 +70,6 @@ export default function FlyingText({
                             key={charIdx}
                             className="char"
                             style={{
-                                display: 'inline-block',
                                 willChange: 'transform, opacity'
                             }}
                         >   
@@ -87,15 +78,11 @@ export default function FlyingText({
                     ))}
                 </div>
             ))}
+            {/* 구름 배경 */}
             <img 
-                src="../src/assets/cloud.png"
+                className='cloudBack'
+                src={Cloud}
                 alt="구름"
-                style={{
-                    width: "600px",
-                    height: "auto",
-                    position: 'absolute',
-                    top: 0
-                }}
             />
         </div>
     )

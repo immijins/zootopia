@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Caacupe+One&display=swap');
+
+/* 전체 컨테이너 */
+.introContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    background: radial-gradient(circle at 50% 30%, #fff 0%, #f1f5f9 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    z-index: 100;
+}
+
+/* 배경 영역 */ 
+.backImg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 캐릭터 뭉치 */
+.ropeCluster {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -20px;
+    width: min(90vw, 650px);
+    will-change: transform;
+}
+.clusterImg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.18));
+}
+
+/* 로고 & 버튼 */
+.introBottomBox {
+    position: absolute;
+    top: clamp(16%, 22vh, 30%);
+    width: min(90vw, 520px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(20px, 4vh, 40px);
+}
+
+.logoImg {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.1));
+}
+
+.enterBtn {
+    width: min(300px, 80vw);
+    min-height: 64px;
+    height: clamp(64px, 8vh, 80px);
+    background-color: #8641A5;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: clamp(24px, 3.2vw, 30px);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: 4px solid #00B9A3;
+    font-family: "Caacupe One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.enterBtn:hover {
+    text-decoration: underline;
+}
+
+/* 푸터 영역 */
+.footerDiv {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+}
+
+@media (max-width: 600px) {
+    .ropeCluster {
+        width: 125vw;
+        margin-top: -8px;
+    }
+
+    .introBottomBox {
+        top: 23%;
+        width: min(88vw, 420px);
+        gap: clamp(16px, 3vh, 28px);
+    }
+
+    .enterBtn {
+        width: min(280px, 78vw);
+        min-height: 58px;
+        height: 9vh;
+        font-size: clamp(22px, 7vw, 30px);
+    }
+}
+
+@media (max-height: 620px) and (orientation: landscape) {
+    .introBottomBox {
+        top: 12%;
+        gap: 12px;
+    }
+
+    .ropeCluster {
+        width: min(65vw, 700px);
+    }
+
+    .enterBtn {
+        min-height: 48px;
+        height: 54px;
+        font-size: 24px;
+    }
+
+}

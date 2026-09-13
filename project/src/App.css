@@ -8,3 +8,35 @@ a {
 ol, ul {
     list-style: none;
 }
+img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 커서 */
+.cursorImg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media (hover: none), (pointer: coarse) {
+    .cursorImg {
+        display: none;
+    }
+
+    body,
+    button,
+    a {
+        cursor: auto;
+    }
+}

@@ -1,0 +1,38 @@
+/* 글자 & 구름 전체 영역 */
+.FlyingDiv {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: rotate(-8deg);
+    font-family: 'Fredoka', 'Impact', sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    color: #03B5A5;
+    line-height: 1.15;
+    user-select: none;
+}
+
+/* 텍스트 */
+.char {
+    display: inline-block;
+}
+
+/* 구름 배경 */
+.cloudBack {
+    position: absolute;
+    width: 900px;
+    height: auto;
+    top: -80%;
+    left: -40%;
+}
+
+@media (max-width: 1024px) {
+    .cloudBack {
+        width: clamp(200px, 400px, 800px);
+    }
+
+    .FlyingDiv {
+        font-size: 30px;
+    }
+}
